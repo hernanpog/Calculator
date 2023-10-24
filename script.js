@@ -11,107 +11,20 @@ let result = 0;
 
 calculation.innerText = '0';
 
+const numbers = document.getElementsByClassName('number');
 
+for (const num of numbers) {
+    num.addEventListener('click', e => {
+        const number = e.target.value;
+        userInput.innerText += number;
 
-document.querySelector('.zero').addEventListener('click', () => {
-    userInput.innerText += '0';
-
-    if (!isOperator) {
-        firstNumber += '0';
-    } else {
-        secondNumber += '0';
-    };
-});
-
-document.querySelector('.one').addEventListener('click', () => {
-    userInput.innerText += '1';
-
-    if (!isOperator) {
-        firstNumber += '1';
-    } else {
-        secondNumber += '1';
-    };
-});
-
-document.querySelector('.two').addEventListener('click', () => {
-    userInput.innerText += '2';
-
-    if (!isOperator) {
-        firstNumber += '2';
-    } else {
-        secondNumber += '2';
-    };
-});
-
-document.querySelector('.three').addEventListener('click', () => {
-    userInput.innerText += '3';
-    
-    if (!isOperator) {
-        firstNumber += '3';
-    } else {
-        secondNumber += '3';
-    };
-});
-
-document.querySelector('.four').addEventListener('click', () => {
-    userInput.innerText += '4';
-    
-    if (!isOperator) {
-        firstNumber += '4';
-    } else {
-        secondNumber += '4';
-    };
-});
-
-document.querySelector('.five').addEventListener('click', () => {
-    userInput.innerText += '5';
-    
-    if (!isOperator) {
-        firstNumber += '5';
-    } else {
-        secondNumber += '5';
-    };
-});
-
-document.querySelector('.six').addEventListener('click', () => {
-    userInput.innerText += '6';
-    
-    if (!isOperator) {
-        firstNumber += '6';
-    } else {
-        secondNumber += '6';
-    };
-});
-
-document.querySelector('.seven').addEventListener('click', () => {
-    userInput.innerText += '7';
-    
-    if (!isOperator) {
-        firstNumber += '7';
-    } else {
-        secondNumber += '7';
-    };
-});
-
-document.querySelector('.eight').addEventListener('click', () => {
-    userInput.innerText += '8';
-    
-    if (!isOperator) {
-        firstNumber += '8';
-    } else {
-        secondNumber += '8';
-    };
-});
-
-document.querySelector('.nine').addEventListener('click', () => {
-    userInput.innerText += '9';
-
-    if (!isOperator) {
-        firstNumber += '9';
-    } else {
-        secondNumber += '9';
-    };
-});
+        if (!isOperator) {
+            firstNumber += number;
+        } else {
+            secondNumber += number;
+        };
+    });
+};
 
 document.querySelector('.point').addEventListener('click', () => {
     if (!isFloat) {
@@ -145,6 +58,7 @@ document.querySelector('.divide').addEventListener('click', () => {
 document.querySelector('.multiply').addEventListener('click', () => {
     if (!firstNumber) {
         userInput.innerText = 'Error.';
+        return;
     }
     else if (isOperator) {
         calculate();
@@ -159,6 +73,7 @@ document.querySelector('.multiply').addEventListener('click', () => {
 document.querySelector('.subtract').addEventListener('click', () => {
     if (!firstNumber) {
         userInput.innerText = 'Error.';
+        return;
     }
     else if (isOperator) {
         calculate();
@@ -173,6 +88,7 @@ document.querySelector('.subtract').addEventListener('click', () => {
 document.querySelector('.add').addEventListener('click', () => {
     if (!firstNumber) {
         userInput.innerText = 'Error.';
+        return;
     }
     else if (isOperator) {
         calculate();
@@ -187,6 +103,7 @@ document.querySelector('.add').addEventListener('click', () => {
 document.querySelector('.remainder').addEventListener('click', () => {
     if (!firstNumber) {
         userInput.innerText = 'Error.';
+        return;
     } 
     else if (isOperator) {
         calculate();
@@ -201,6 +118,7 @@ document.querySelector('.remainder').addEventListener('click', () => {
 document.querySelector('.equal').addEventListener('click', () => {
     if (!firstNumber) {
         userInput.innerText = 'Error.';
+        return;
     };
     calculate();
 });
