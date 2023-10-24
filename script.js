@@ -11,6 +11,8 @@ let result = 0;
 
 calculation.innerText = '0';
 
+
+
 document.querySelector('.zero').addEventListener('click', () => {
     userInput.innerText += '0';
 
